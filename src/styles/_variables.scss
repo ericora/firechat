@@ -1,0 +1,82 @@
+:root {
+  /** shared **/
+  --color-base: #f4f4f4;
+  --color-contrast: #222;
+  --background-color: #f4f4f4;
+  --text-color: #222;
+  --toolbar-background-color: #d6dae5;
+  --toolbar-text-color: #25272c;
+  --item-background-color: #98a2be;
+  --item-text-color: #2c2f34;
+  /** primary **/
+  --color-primary: #488aff;
+  --color-primary-rgb: 72, 138, 255;
+  --color-primary-contrast: #fff;
+  --color-primary-contrast-rgb: 255, 255, 255;
+  --color-primary-shade: #3f79e0;
+  --color-primary-tint: #5a96ff;
+
+  /** secondary **/
+  --color-secondary: #32db64;
+  --color-secondary-rgb: 50, 219, 100;
+  --color-secondary-contrast: #fff;
+  --color-secondary-contrast-rgb: 255, 255, 255;
+  --color-secondary-shade: #2cc158;
+  --color-secondary-tint: #47df74;
+
+  /** tertiary **/
+  --color-tertiary: #f4a942;
+  --color-tertiary-rgb: 244, 169, 66;
+  --color-tertiary-contrast: #fff;
+  --color-tertiary-contrast-rgb: 255, 255, 255;
+  --color-tertiary-shade: #d7953a;
+  --color-tertiary-tint: #f5b255;
+
+  /** success **/
+  --color-success: #10dc60;
+  --color-success-rgb: 16, 220, 96;
+  --color-success-contrast: #fff;
+  --color-success-contrast-rgb: 255, 255, 255;
+  --color-success-shade: #0ec254;
+  --color-success-tint: #28e070;
+
+  /** warning **/
+  --color-warning: #ffce00;
+  --color-warning-rgb: 255, 206, 0;
+  --color-warning-contrast: #000;
+  --color-warning-contrast-rgb: 0, 0, 0;
+  --color-warning-shade: #e0b500;
+  --color-warning-tint: #ffd31a;
+
+  /** danger **/
+  --color-danger: #f53d3d;
+  --color-danger-rgb: 245, 61, 61;
+  --color-danger-contrast: #fff;
+  --color-danger-contrast-rgb: 255, 255, 255;
+  --color-danger-shade: #d83636;
+  --color-danger-tint: #f65050;
+
+  /** light **/
+  --color-light: #f4f4f4;
+  --color-light-rgb: 244, 244, 244;
+  --color-light-contrast: #000;
+  --color-light-contrast-rgb: 0, 0, 0;
+  --color-light-shade: #d7d7d7;
+  --color-light-tint: #f5f5f5;
+
+  /** medium **/
+  --color-medium: #989aa2;
+  --color-medium-rgb: 152, 154, 162;
+  --color-medium-contrast: #000;
+  --color-medium-contrast-rgb: 0, 0, 0;
+  --color-medium-shade: #86888f;
+  --color-medium-tint: #a2a4ab;
+
+  /** dark **/
+  --color-dark: #222;
+  --color-dark-rgb: 34, 34, 34;
+  --color-dark-contrast: #fff;
+  --color-dark-contrast-rgb: 255, 255, 255;
+  --color-dark-shade: #1e1e1e;
+  --color-dark-tint: #383838;
+}
