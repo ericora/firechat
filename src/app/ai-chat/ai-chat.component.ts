@@ -1,5 +1,5 @@
+import { AiChatService, Message } from './../services/ai-chat.service';
 import { Observable } from 'rxjs';
-import { ChatService, Message } from './../services/chat.service';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { scan } from 'rxjs/operators';
 
@@ -12,10 +12,15 @@ export class AiChatComponent implements OnInit {
   messages: Observable<any>;
   newMsg;
   @ViewChild('chatBox') chatBox: ElementRef;
-  constructor(public cs: ChatService) {
-    this.messages = this.cs.conversation
-      .asObservable()
-      .pipe(scan((acc, msg) => acc.concat(msg)));
+  constructor(public cs: AiChatService) {
+    this.cs.conversation.next([new Message("Hey, let's chat", 'bot')]);
+    this.messages = this.cs.conversation.asObservable().pipe(
+      scan((acc, msg) => {
+        console.log(acc);
+
+        return acc.concat(msg);
+      })
+    );
   }
 
   ngOnInit(): void {
