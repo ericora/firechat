@@ -1,0 +1,31 @@
+<div class="ai-chat">
+  <div class="ai-chat--container">
+    <div class="ai-chat--container--header">
+      <button class="btn btn-light back-btn" routerLink="/">Back</button>
+    </div>
+    <div class="ai-chat--container--content" #chatBox>
+      <div
+        class="ai-chat--container--content--message"
+        *ngFor="let message of messages | async"
+        [ngClass]="{
+          from: message.sendBy === 'bot',
+          to: message.sendBy === 'user'
+        }"
+      >
+        {{ message.content }}
+      </div>
+    </div>
+    <div class="ai-chat--container--submit">
+      <input
+        class="input"
+        [(ngModel)]="newMsg"
+        maxlength="100"
+        (keyup.enter)="sendMsg()"
+      />
+
+      <button class="btn btn-light" [disabled]="!newMsg" (click)="sendMsg()">
+        Send
+      </button>
+    </div>
+  </div>
+</div>

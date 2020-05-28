@@ -14,6 +14,7 @@ export const environment = {
     appId: '1:1015868826883:web:30b402aef71d6464e03536',
     measurementId: 'G-CB8D2NSNY3',
   },
+  dialogflow: { angularBot: 'cbf69554ad8b49b9812d01848ed118c9' },
 };
 
 /*

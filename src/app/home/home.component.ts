@@ -29,4 +29,8 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['chats', this.roomId]);
     }
   }
+
+  toAiChat() {
+    this.router.navigate(['ai-chat']);
+  }
 }

@@ -12,9 +12,10 @@ import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { DatePipe } from './pipe/date.pipe';
+import { AiChatComponent } from './ai-chat/ai-chat.component';
 
 @NgModule({
-  declarations: [AppComponent, ChatComponent, HomeComponent, DatePipe],
+  declarations: [AppComponent, ChatComponent, HomeComponent, DatePipe, AiChatComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
