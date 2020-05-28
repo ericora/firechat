@@ -1,4 +1,4 @@
-@import './src/styles/mixins';
+@import '../../styles/mixins';
 
 .ai-chat {
   min-height: 100vh;
@@ -37,6 +37,10 @@
       font-size: 2rem;
       background-color: var(--color-primary-tint);
       color: var(--color-primary-contrast);
+      @include respond-s {
+        position: fixed;
+        top: 0rem;
+      }
       & > .back-btn {
         font-size: 1.5rem;
         position: absolute;
@@ -58,6 +62,10 @@
       align-items: center;
       font-size: 1.5rem;
       overflow: auto;
+      @include respond-s {
+        position: fixed;
+        top: 5rem;
+      }
       &--message {
         padding: 1rem;
         border-radius: 0.5rem;
@@ -85,6 +93,11 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
+
+      @include respond-s {
+        position: fixed;
+        bottom: 0;
+      }
       & > input {
         height: 2rem;
         width: 60%;
