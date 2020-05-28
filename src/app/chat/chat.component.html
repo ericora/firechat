@@ -65,7 +65,7 @@
           <span>{{ chat.id }}</span>
         </div>
         <div class="chat--container--content" #chatBox>
-          <span class="notice">Created At {{ chat.createdAt }}</span>
+          <span class="notice">Created At {{ chat.createdAt | date }}</span>
           <div
             class="chat--message"
             *ngFor="let msg of chat.messages; trackBy: trackByCreated"
