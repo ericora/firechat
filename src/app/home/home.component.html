@@ -1,5 +1,43 @@
 <div class="home">
-  <div class="home--title">Angular + Firebase Chat APP</div>
+  <div class="home--title">Let's Chat</div>
+  <ng-container *ngIf="auth.user$ | async as user">
+    <div class="home--info">
+      <img [src]="user.photoURL" width="50px" />
+      <span class="tag is-dark">{{ user.displayName }}</span>
+    </div>
+  </ng-container>
+  <button class="btn btn-light">Chat With AI</button>
+  <span>or</span>
+  <div class="home--activated" *ngIf="auth.user$ | async as user; else login">
+    <div class="home--activated--join" [class]="{ 'no-room': !ifExists }">
+      <input type="text" placeholder="Enter Room Id" [(ngModel)]="roomId" />
+      <button class="btn btn-primary" (click)="join()" [disabled]="!roomId">
+        Join
+      </button>
+    </div>
+
+    <button class="btn btn-secondary" (click)="cs.create()">
+      Create A Room
+    </button>
+
+    <ul>
+      <li *ngFor="let chat of userChats$ | async">
+        <a [routerLink]="'chats/' + chat.id"
+          >{{ chat.id }} - {{ chat.messages.length }} Messages
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #login>
+    <button class="btn btn-light login-btn" (click)="auth.googleSignIn()">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+        alt=""
+      />
+      <span>Login with Google</span>
+    </button>
+  </ng-template>
 </div>
 
 <!-- <h1>Welcome to Mega Chat</h1>

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { ChatService } from '../services/chat.service';
@@ -9,9 +10,23 @@ import { ChatService } from '../services/chat.service';
 })
 export class HomeComponent implements OnInit {
   userChats$;
-  constructor(public auth: AuthService, public cs: ChatService) {}
+  roomId;
+  ifExists = true;
+  constructor(
+    public auth: AuthService,
+    public cs: ChatService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.userChats$ = this.cs.getUserChats();
+  }
+
+  async join() {
+    this.ifExists = await this.cs.checkRoom(this.roomId).toPromise();
+
+    if (this.ifExists) {
+      this.router.navigate(['chats', this.roomId]);
+    }
   }
 }

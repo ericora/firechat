@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ChatService } from '../services/chat.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -13,7 +13,7 @@ import { AuthService } from '../services/auth.service';
 export class ChatComponent implements OnInit {
   chat$: Observable<any>;
   newMsg: string;
-
+  @ViewChild('chatBox') chatBox: ElementRef;
   constructor(
     public cs: ChatService,
     private route: ActivatedRoute,
@@ -41,6 +41,13 @@ export class ChatComponent implements OnInit {
   }
 
   private scrollBottom() {
-    setTimeout(() => window.scrollTo(0, document.body.scrollHeight), 500);
+    setTimeout(
+      () =>
+        this.chatBox.nativeElement.scrollTo(
+          0,
+          this.chatBox.nativeElement.scrollHeight
+        ),
+      500
+    );
   }
 }

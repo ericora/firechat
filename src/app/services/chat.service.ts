@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import {
+  AngularFirestore,
+  AngularFirestoreDocument,
+} from '@angular/fire/firestore';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 import { firestore } from 'firebase/app';
@@ -60,6 +63,11 @@ export class ChatService {
     const docRef = await this.afs.collection('chats').add(data);
 
     return this.router.navigate(['chats', docRef.id]);
+  }
+
+  checkRoom(chatId) {
+    const ref = this.afs.collection('chats').doc(chatId);
+    return ref.get().pipe(map((res) => res.exists));
   }
 
   async sendMessage(chatId, content) {

@@ -56,4 +56,62 @@
     </div>
   </ng-container>
 </ng-container> -->
-<ng-container *ngIf="chat$ | async as chat"> </ng-container>
+<ng-container *ngIf="chat$ | async as chat">
+  <ng-container *ngIf="auth.user$ | async as user">
+    <div class="chat">
+      <div class="chat--container">
+        <div class="chat--container--header">
+          <button class="btn btn-light back-btn" routerLink="/">Back</button>
+          <span>{{ chat.id }}</span>
+        </div>
+        <div class="chat--container--content" #chatBox>
+          <span class="notice">Created At {{ chat.createdAt }}</span>
+          <div
+            class="chat--message"
+            *ngFor="let msg of chat.messages; trackBy: trackByCreated"
+            [ngStyle]="{
+              'justify-content':
+                msg.uid === user.uid ? 'flex-end' : 'flex-start'
+            }"
+          >
+            <img
+              *ngIf="msg.uid !== user.uid"
+              class="chat--message--user"
+              [src]="msg.user?.photoURL"
+            />
+            <div
+              class="chat--message--msg"
+              [ngStyle]="{
+                'align-items': msg.uid === user.uid ? 'flex-end' : 'flex-start'
+              }"
+            >
+              <span>{{ msg.user?.displayName }} </span>
+              <p>{{ msg.content }}</p>
+            </div>
+            <img
+              *ngIf="msg.uid === user.uid"
+              class="chat--message--user"
+              [src]="msg.user?.photoURL"
+            />
+          </div>
+        </div>
+        <div class="chat--submit">
+          <input
+            class="input"
+            [(ngModel)]="newMsg"
+            maxlength="100"
+            (keydown.enter)="submit(chat.id)"
+          />
+
+          <button
+            (click)="submit(chat.id)"
+            class="btn btn-light"
+            [disabled]="!newMsg"
+          >
+            Send
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>

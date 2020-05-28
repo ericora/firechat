@@ -1,9 +1,115 @@
-img {
-  border-radius: 50%;
-  display: block;
-  margin: auto;
+.home {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-light);
+  // background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &--title {
+    font-family: 'Indie Flower', cursive;
+    font-size: 5rem;
+    color: var(--text-color);
+    margin: 5rem 0 2rem;
+  }
+
+  &--info {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 2rem;
+    & > img {
+      border-radius: 100%;
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      -ms-border-radius: 100%;
+      -o-border-radius: 100%;
+      margin: 0 0 2rem;
+    }
+  }
+
+  &--activated {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > .btn {
+      margin: 1rem;
+    }
+
+    &--join {
+      margin: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: var(--color-light);
+      color: var(--color-light-contrast);
+      border-radius: 1rem;
+      -webkit-border-radius: 1rem;
+      -moz-border-radius: 1rem;
+      -ms-border-radius: 1rem;
+      -o-border-radius: 1rem;
+      border: 0.1rem solid var(--color-dark);
+      & > input {
+        height: 100%;
+        font-size: 1.5rem;
+        background-color: var(--color-light);
+        color: var(--color-light-contrast);
+      }
+      & > .btn {
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+      }
+
+      & > .btn[disabled] {
+        cursor: not-allowed;
+      }
+    }
+    & > ul li {
+      background-color: var(--color-tertiary);
+      color: var(--color-tertiary-contrast);
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+      margin: 1rem;
+      border-radius: 1rem;
+      -webkit-border-radius: 1rem;
+      -moz-border-radius: 1rem;
+      -ms-border-radius: 1rem;
+      -o-border-radius: 1rem;
+      border: 0.1rem solid var(--color-dark);
+    }
+  }
+  & > .btn {
+    margin: 1rem;
+  }
+  & > span {
+    font-size: 2rem;
+  }
+  & > .login-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    & > img {
+      width: 3rem;
+      height: 3rem;
+      margin: 0 1rem;
+    }
+  }
 }
 
-button {
-  margin: 10px;
+.no-room {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0.3rem var(--color-danger-shade);
 }
+
+// img {
+//   border-radius: 50%;
+//   display: block;
+//   margin: auto;
+// }
+
+// button {
+//   margin: 10px;
+// }

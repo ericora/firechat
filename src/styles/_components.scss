@@ -1,0 +1,28 @@
+.btn {
+  padding: 1rem 2rem;
+  cursor: pointer;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  box-shadow: 0 0 0.3rem var(--color-dark-shade);
+  font-size: 2rem;
+  &-primary {
+    background-color: var(--color-primary);
+    color: var(--color-primary-contrast);
+  }
+  &-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-secondary-contrast);
+  }
+
+  &-light {
+    background-color: var(--color-light);
+    color: var(--color-light-contrast);
+  }
+  &-success {
+    background-color: var(--color-success);
+    color: var(--color-success-contrast);
+  }
+}
