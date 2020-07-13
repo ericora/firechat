@@ -40,6 +40,11 @@
       font-size: 2rem;
       background-color: var(--color-primary-tint);
       color: var(--color-primary-contrast);
+      @include respond-s {
+        position: fixed;
+        top: 0rem;
+        width: 100vw;
+      }
       & > .back-btn {
         font-size: 1.5rem;
         position: absolute;
@@ -61,6 +66,11 @@
       align-items: center;
       font-size: 1.5rem;
       overflow: auto;
+      @include respond-s {
+        position: fixed;
+        top: 5rem;
+        width: 100vw;
+      }
       & > .notice {
         margin: 1rem 0;
       }
@@ -112,6 +122,11 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    @include respond-s {
+      position: fixed;
+      width: 100vw;
+      bottom: 0;
+    }
     & > input {
       height: 2rem;
       width: 60%;
